@@ -119,8 +119,7 @@ const App = () => {
         </div>
 
         <p style={{ fontSize: "1.45rem", fontWeight: "700", color: "#be123c", marginTop: "0.75rem", marginBottom: "1rem" }}>🙏🏻 જય સ્વામિનારાયણ 🙏🏻</p>
-        <p style={{ fontSize: "1.25rem", fontWeight: "700", color: "#be123c", marginTop: "0.75rem", marginBottom: "1rem" }}>🌷 ઘર બેઠા લાઈવ
-          રવિસભા 🌷</p>
+
 
         <div
           style={{
@@ -159,18 +158,20 @@ const App = () => {
               }}
             />
           </div>
-          <p style={{
-            fontSize: "1rem",
-            fontWeight: "700",
-            color: "#881337",
-            textAlign: "center",
-            flexShrink: 0,
-            whiteSpace: "nowrap",
-            margin: "0 1rem"
-          }}>
-            પ્રેરક: ૫.પૂ.સદ્.શ્રીજ્ઞાનજીવનદાસજી સ્વામી (કુંડળધામ)
+          <div> <p style={{ fontSize: "1.45rem", fontWeight: "700", color: "#be123c", marginTop: "0.75rem", marginBottom: "1rem" }}>🌷 ઘર બેઠા લાઈવ
+            રવિસભા 🌷</p>
+            <p style={{
+              fontSize: "1rem",
+              fontWeight: "700",
+              color: "#881337",
+              textAlign: "center",
+              flexShrink: 0,
+              whiteSpace: "nowrap",
+              margin: "0 1rem"
+            }}>
+              પ્રેરક: ૫.પૂ.સદ્.શ્રીજ્ઞાનજીવનદાસજી સ્વામી (કુંડળધામ)
 
-          </p>
+            </p></div>
           <div style={{
             width: "6rem",
             height: "6rem",
