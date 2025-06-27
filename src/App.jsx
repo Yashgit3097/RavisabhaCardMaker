@@ -20,8 +20,24 @@ const App = () => {
     Serenity: ["#e0e7ff", "#c7d2fe"],
     Creamy: ["#fff7ed", "#ffedd5"],
     Lemon: ["#fef9c3", "#fef08a"],
-    Ocean: ["#ccfbf1", "#99f6e4"]
+    Ocean: ["#ccfbf1", "#99f6e4"],
+    Fog: ["#f8fafc", "#e2e8f0"],
+
+    // 🌿 Softened, Lightened New Colors (No Red)
+    Emerald: ["#e6f9f2", "#a7f6d1"],         // Light emerald pastel
+    RoyalBlue: ["#ebf3ff", "#a7c7f9"],       // Muted royal blue tones
+    Amber: ["#fff8e1", "#ffe5b4"],           // Gentle golden cream
+    Grape: ["#f3e8ff", "#c4b5fd"],           // Soft lilac-purple
+    TealTwist: ["#ddfbf7", "#9debe4"],       // Light minty teal
+    Steel: ["#f5f7fa", "#d0d7e2"],           // Soft modern grey-blue
+    Mocha: ["#f8f6f4", "#dbc9b6"],           // Pale cream to light coffee
+    IndigoDream: ["#e8eaff", "#b4b4f8"],     // Pastel indigo
+    Forest: ["#effbe9", "#b6e7b0"],          // Forest green, but fresh and gentle
+    SunsetGold: ["#fffbe9", "#ffe9aa"]       // Pale buttery gold
   };
+
+
+
 
   const [color1, color2] = gradients[selectedGradient];
 
@@ -108,7 +124,7 @@ const App = () => {
             <p>સ્થળ: {place || "સ્થળ"}</p>
             <p>સમય: {time || "સમય"}</p>
           </div>
-          {note && (<p style={{ marginTop: "1rem", fontSize: "1.125rem", color: "#9f1239" }}><span style={{ fontWeight: "700" }}>નોંધ:</span> {note}</p>)}
+          {note && (<p style={{ marginTop: "1rem", fontSize: "1.25rem", color: "#9f1239" }}><span style={{ fontWeight: "700" }}>નોંધ:</span> {note}</p>)}
         </div>
 
         <p style={{ fontSize: "1.45rem", fontWeight: "700", color: "#be123c", marginTop: "0.75rem", marginBottom: "1rem" }}>🙏🏻 જય સ્વામિનારાયણ 🙏🏻</p>
