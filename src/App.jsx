@@ -1,6 +1,4 @@
-// ✅ Final version - Fully responsive and identical when downloaded from all devices
-
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import html2canvas from "html2canvas";
 
 const App = () => {
@@ -37,10 +35,10 @@ const App = () => {
       const canvas = await html2canvas(card, {
         useCORS: true,
         backgroundColor: null,
-        scale: 2,
-        width: width,
-        height: height,
-        scrollY: -window.scrollY // prevent cropping issues due to scroll
+        scrollY: -window.scrollY,
+        scale: 3, // ✅ Force higher resolution for sharp, larger output even on mobile
+        width,
+        height
       });
 
       const imgData = canvas.toDataURL("image/png");
@@ -53,16 +51,12 @@ const App = () => {
     }
   };
 
-
   return (
     <div style={{
       minHeight: "100vh",
-
       minWidth: "700px",
-
       background: "linear-gradient(to bottom right, white, #ffe4e6)",
       padding: "1.5rem",
-
     }}>
       <div style={{
         minWidth: "672px",
@@ -96,7 +90,7 @@ const App = () => {
         ref={cardRef}
         style={{
           backgroundImage: `linear-gradient(to bottom right, ${color1}, ${color2})`,
-          width: "640px", // ⬅️ Increased from 576px to 640px
+          width: "640px",
           margin: "0 auto",
           padding: "1.5rem",
           borderRadius: "1.5rem",
@@ -105,7 +99,6 @@ const App = () => {
           textAlign: "center"
         }}
       >
-
         <h1 style={{ fontSize: "2rem", fontWeight: "700", color: "#9f1239", marginBottom: "1rem" }}>🌸 રવિસભા 🌸</h1>
 
         <div style={{ backgroundColor: "rgba(255,255,255,0.7)", border: "2px dashed #fecdd3", borderRadius: "1rem", padding: "1.25rem", marginBottom: "1rem" }}>
@@ -120,78 +113,46 @@ const App = () => {
 
         <p style={{ fontSize: "1.45rem", fontWeight: "700", color: "#be123c", marginTop: "0.75rem", marginBottom: "1rem" }}>🙏🏻 જય સ્વામિનારાયણ 🙏🏻</p>
 
-
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            flexWrap: "nowrap",
-            gap: "0.25rem",
-            marginTop: "1.5rem"
-            // ✅ Removed overflowX: "auto"
-          }}
-        >
-
-          <div
-            style={{
-              width: "6rem",
-              height: "6rem",
-              borderRadius: "50%",
-              border: "2px solid #be123c",
-              overflow: "hidden",
-              flexShrink: 0,
-              position: "relative"
-            }}
-          >
-            <img
-              src="/gurujiswami.png"
-              alt="Guruji"
-              style={{
-                position: "absolute",         // ✅ ensures full fill without padding/gaps
-                top: 0,
-                left: 0,
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                objectPosition: "center"      // ✅ dynamic safe
-              }}
-            />
-          </div>
-          <div> <p style={{ fontSize: "1.45rem", fontWeight: "700", color: "#be123c", marginTop: "0.75rem", marginBottom: "1rem" }}>🌷 ઘર બેઠા લાઈવ
-            રવિસભા 🌷</p>
-            <p style={{
-              fontSize: "1rem",
-              fontWeight: "700",
-              color: "#881337",
-              textAlign: "center",
-              flexShrink: 0,
-              whiteSpace: "nowrap",
-              margin: "0 1rem"
-            }}>
-              પ્રેરક: ૫.પૂ.સદ્.શ્રીજ્ઞાનજીવનદાસજી સ્વામી (કુંડળધામ)
-
-            </p></div>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "nowrap", gap: "0.25rem", marginTop: "1.5rem" }}>
           <div style={{
             width: "6rem",
             height: "6rem",
             borderRadius: "50%",
             border: "2px solid #be123c",
             overflow: "hidden",
-            flexShrink: 0
+            flexShrink: 0,
+            position: "relative"
           }}>
-            <img
-              src="/swaminarayan.png"
-              alt="Lord Swaminarayan"
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover"
-              }}
-            />
+            <img src="/gurujiswami.png" alt="Guruji" style={{
+              position: "absolute", top: 0, left: 0,
+              width: "100%", height: "100%",
+              objectFit: "cover", objectPosition: "center"
+            }} />
+          </div>
+
+          <div style={{ marginTop: "-1.2rem" }}>
+            <p style={{ fontSize: "1.45rem", fontWeight: "700", color: "#be123c", margin: "0 0 0.5rem" }}>
+              🌷 ઘર બેઠા લાઈવ રવિસભા 🌷
+            </p>
+            <p style={{
+              fontSize: "1rem", fontWeight: "700", color: "#881337",
+              textAlign: "center", flexShrink: 0, whiteSpace: "nowrap", margin: "0 1rem"
+            }}>
+              પ્રેરક: ૫.પૂ.સદ્.શ્રીજ્ઞાનજીવનદાસજી સ્વામી (કુંડળધામ)
+            </p>
+          </div>
+
+
+          <div style={{
+            width: "6rem", height: "6rem",
+            borderRadius: "50%", border: "2px solid #be123c",
+            overflow: "hidden", flexShrink: 0
+          }}>
+            <img src="/swaminarayan.png" alt="Lord Swaminarayan" style={{
+              width: "100%", height: "100%", objectFit: "cover"
+            }} />
           </div>
         </div>
-
       </div>
     </div>
   );
