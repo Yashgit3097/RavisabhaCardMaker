@@ -115,9 +115,9 @@ const App = () => {
           textAlign: "center"
         }}
       >
-        <h1 style={{ fontSize: "2rem", fontWeight: "700", color: "#9f1239", marginBottom: "1rem" }}>🌸 રવિસભા 🌸</h1>
+        <h1 style={{ fontSize: "3rem", fontWeight: "700", color: "#9f1239", marginBottom: "1.5rem" }}>🌸 રવિસભા 🌸</h1>
 
-        <div style={{ backgroundColor: "rgba(255,255,255,0.7)", border: "2px dashed #fecdd3", borderRadius: "1rem", padding: "1.25rem", marginBottom: "1rem" }}>
+        <div style={{ backgroundColor: "rgba(255,255,255,0.7)", border: "2px dashed #fecdd3", borderRadius: "1rem", padding: "1.25rem", marginBottom: "1rem", }}>
           <p style={{ fontSize: "1.7rem", color: "#9f1239", fontWeight: "700", marginBottom: "0.7rem" }}>યજમાન: {yajmanName || "યજમાનનું નામ"}</p>
           <div style={{ fontSize: "1.5rem", color: "#9f1239", fontWeight: "700" }}>
             <p>તારીખ: {date || "તારીખ"}</p>
