@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import html2canvas from "html2canvas";
+import { useNavigate } from "react-router-dom";
 
 const Ravisabha = () => {
     const [yajmanName, setYajmanName] = useState("");
@@ -40,6 +41,7 @@ const Ravisabha = () => {
 
 
     const [color1, color2] = gradients[selectedGradient];
+    const navigate = useNavigate();
 
     const downloadCard = async () => {
         if (!cardRef.current) return;
@@ -74,6 +76,23 @@ const Ravisabha = () => {
             background: "linear-gradient(to bottom right, white, #ffe4e6)",
             padding: "1.5rem",
         }}>
+
+            <button
+                onClick={() => navigate("/")}
+                style={{
+                    margin: "0 auto 1rem",
+                    display: "block",
+                    backgroundColor: "#fcd34d",
+                    color: "#78350f",
+                    fontWeight: "600",
+                    padding: "0.5rem 1rem",
+                    borderRadius: "0.5rem",
+                    border: "2px solid #facc15",
+                    cursor: "pointer"
+                }}
+            >
+                ⬅️ પાછા જાવ હોમ પેજ પર
+            </button>
             <div style={{
                 minWidth: "672px",
                 margin: "0 auto",
