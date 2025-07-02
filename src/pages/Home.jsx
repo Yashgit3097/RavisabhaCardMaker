@@ -34,7 +34,7 @@ const Home = () => {
 
 const Card = ({ title, image, onClick }) => (
     <div onClick={onClick} style={{
-        width: "300px",
+        width: "320px",
         borderRadius: "1rem",
         overflow: "hidden",
         boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
@@ -42,7 +42,7 @@ const Card = ({ title, image, onClick }) => (
         transition: "transform 0.3s",
         backgroundColor: "#fff"
     }}>
-        <img src={image} alt={title} style={{ width: "100%", height: "200px", objectFit: "cover" }} />
+        <img src={image} alt={title} style={{ width: "100%", height: "300px", objectFit: "cover" }} />
         <div style={{ padding: "1rem", textAlign: "center" }}>
             <h3 style={{ fontSize: "1.25rem", color: "#9f1239", fontWeight: "bold" }}>{title}</h3>
         </div>
