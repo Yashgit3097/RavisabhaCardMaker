@@ -48,17 +48,33 @@ const Ravisabha = () => {
 
         try {
             const card = cardRef.current;
-            const { width, height } = card.getBoundingClientRect();
 
+            // ✅ Step 1: Temporarily increase font-size of note on mobile
+            const noteElement = card.querySelector(".note-text");
+            const originalFontSize = noteElement?.style.fontSize;
+
+            // Detect mobile screen width
+            const isMobile = window.innerWidth <= 768;
+            if (isMobile && noteElement) {
+                noteElement.style.fontSize = "1.25rem"; // Increased font size for mobile
+            }
+
+            const { width, height } = card.getBoundingClientRect();
             const canvas = await html2canvas(card, {
                 useCORS: true,
                 backgroundColor: null,
                 scrollY: -window.scrollY,
-                scale: 3, // ✅ Force higher resolution for sharp, larger output even on mobile
+                scale: 3,
                 width,
                 height
             });
 
+            // ✅ Step 2: Reset font-size back
+            if (noteElement) {
+                noteElement.style.fontSize = originalFontSize || "1.25rem";
+            }
+
+            // ✅ Step 3: Download image
             const imgData = canvas.toDataURL("image/png");
             const link = document.createElement("a");
             link.href = imgData;
@@ -68,6 +84,7 @@ const Ravisabha = () => {
             console.error("Download failed:", error);
         }
     };
+
 
     return (
         <div style={{
@@ -143,7 +160,12 @@ const Ravisabha = () => {
                         <p>સ્થળ: {place || "સ્થળ"}</p>
                         <p>સમય: {time || "સમય"}</p>
                     </div>
-                    {note && (<p style={{ marginTop: "1rem", fontSize: "1.25rem", color: "#9f1239" }}><span style={{ fontWeight: "700" }}>નોંધ:</span> {note}</p>)}
+                    {note && (
+                        <p className="note-text" style={{ marginTop: "1rem", fontSize: "1.25rem", color: "#9f1239" }}>
+                            <span style={{ fontWeight: "700" }}>નોંધ:</span> {note}
+                        </p>
+                    )}
+
                 </div>
 
                 <p style={{ fontSize: "1.45rem", fontWeight: "700", color: "#be123c", marginTop: "0.75rem", marginBottom: "1rem" }}>🙏🏻 જય સ્વામિનારાયણ 🙏🏻</p>
