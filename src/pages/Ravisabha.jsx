@@ -56,7 +56,7 @@ const Ravisabha = () => {
             // Detect mobile screen width
             const isMobile = window.innerWidth <= 768;
             if (isMobile && noteElement) {
-                noteElement.style.fontSize = "1.50rem"; // Increased font size for mobile
+                noteElement.style.fontSize = "1.60rem"; // Increased font size for mobile
             }
 
             const { width, height } = card.getBoundingClientRect();
