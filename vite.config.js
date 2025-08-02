@@ -14,7 +14,7 @@ export default defineConfig({
         name: 'Swaminarayan Card Maker',
         short_name: 'Swaminarayan Card Maker',
         description: 'This is one responsive cardmaker web app where user can install app locally too',
-        theme_color: '#ffffff',
+        theme_color: '#000000',
         background_color: '#000000',
         display: 'standalone',
         orientation: 'portrait',
