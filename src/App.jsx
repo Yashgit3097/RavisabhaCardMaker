@@ -3,6 +3,8 @@ import { HashRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Ravisabha from "./pages/Ravisabha";
 import Padyatra from "./pages/Padyatra";
+import InstallButton from "./pages/InstallButton";
+
 
 const App = () => {
   return (

@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import InstallButton from "./InstallButton";
 
 const Home = () => {
     const navigate = useNavigate();
@@ -15,6 +16,7 @@ const Home = () => {
             gap: "2rem",
             padding: "2rem"
         }}>
+            <InstallButton />
             <h1 style={{ fontSize: "2.5rem", color: "#be123c", fontWeight: "bold" }}>📜 આમંત્રણ કાર્ડ પસંદ કરો</h1>
             <div style={{ display: "flex", gap: "2rem", flexWrap: "wrap", justifyContent: "center" }}>
                 <Card
